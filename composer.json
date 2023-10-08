@@ -58,6 +58,10 @@
     "extra": {
         "branch-alias": {
             "dev-master": "3.0-dev"
+        },
+        "virion": {
+            "spec": "3.0",
+            "namespace-root": "PhpAmqpLib\\"
         }
     }
 }
