@@ -62,9 +62,9 @@ class SocketIO extends AbstractIO
     {
         $this->sock = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
 
-        list($sec, $uSec) = MiscHelper::splitSecondsMicroseconds($this->write_timeout);
+        [$sec, $uSec] = MiscHelper::splitSecondsMicroseconds($this->write_timeout);
         socket_set_option($this->sock, SOL_SOCKET, SO_SNDTIMEO, array('sec' => $sec, 'usec' => $uSec));
-        list($sec, $uSec) = MiscHelper::splitSecondsMicroseconds($this->read_timeout);
+        [$sec, $uSec] = MiscHelper::splitSecondsMicroseconds($this->read_timeout);
         socket_set_option($this->sock, SOL_SOCKET, SO_RCVTIMEO, array('sec' => $sec, 'usec' => $uSec));
 
         $this->setErrorHandler();
@@ -121,7 +121,7 @@ class SocketIO extends AbstractIO
 
         $this->check_heartbeat();
 
-        list($timeout_sec, $timeout_uSec) = MiscHelper::splitSecondsMicroseconds($this->read_timeout);
+        [$timeout_sec, $timeout_uSec] = MiscHelper::splitSecondsMicroseconds($this->read_timeout);
         $read_start = microtime(true);
         $read = 0;
         $data = '';

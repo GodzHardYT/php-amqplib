@@ -129,7 +129,7 @@ class StreamIO extends AbstractIO
             );
         }
 
-        list($sec, $uSec) = MiscHelper::splitSecondsMicroseconds(max($this->read_timeout, $this->write_timeout));
+        [$sec, $uSec] = MiscHelper::splitSecondsMicroseconds(max($this->read_timeout, $this->write_timeout));
         if (!stream_set_timeout($this->sock, $sec, $uSec)) {
             throw new AMQPIOException('Timeout could not be set');
         }
@@ -164,7 +164,7 @@ class StreamIO extends AbstractIO
     {
         $this->check_heartbeat();
 
-        list($timeout_sec, $timeout_uSec) = MiscHelper::splitSecondsMicroseconds($this->read_timeout);
+        [$timeout_sec, $timeout_uSec] = MiscHelper::splitSecondsMicroseconds($this->read_timeout);
 
         $read_start = microtime(true);
         $read = 0;
