@@ -45,7 +45,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PhpAmqpLib\\": "src/PhpAmqpLib/"
+            "PhpAmqpLib\\": "src/amqplib/PhpAmqpLib/"
         }
     },
     "autoload-dev": {
@@ -61,7 +61,7 @@
         },
         "virion": {
             "spec": "3.0",
-            "namespace-root": "PhpAmqpLib"
+            "namespace-root": "amqplib\\PhpAmqpLib"
         }
     }
 }
