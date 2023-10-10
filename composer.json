@@ -61,7 +61,7 @@
         },
         "virion": {
             "spec": "3.0",
-            "namespace-root": "PhpAmqpLib\\AMQPLib"
+            "namespace-root": "php-amqplib\\PhpAmqpLib"
         }
     }
 }
